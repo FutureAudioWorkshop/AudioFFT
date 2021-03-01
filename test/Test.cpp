@@ -170,6 +170,10 @@ static void TestCorrectness()
   }
 }
 
+#ifdef __clang__
+    #pragma clang diagnostic push
+    #pragma clang diagnostic ignored "-Wunused-function"
+#endif
 
 static void TestPerformance(const size_t inputSize)
 {
@@ -203,6 +207,9 @@ static void TestPerformance(const size_t inputSize)
   printf(" => Completed!\n");
 }
 
+#ifdef __clang__
+    #pragma clang diagnostic pop
+#endif
 
 #ifdef TEST_PERFORMANCE_KISSFFT
 
